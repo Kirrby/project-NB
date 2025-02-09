@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://di125aqlx46oq"]
+
+[ext_resource type="Script" uid="uid://dm3g1kw5fnx1f" path="res://loby.gd" id="1_ya1i7"]
+
+[node name="Loby" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ya1i7")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+offset_top = 423.0
+offset_right = 256.0
+offset_bottom = 576.0
+focus_mode = 2
+vertical = true
+
+[node name="Start" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "开始游戏"
+
+[node name="Continue" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "继续游戏"
+
+[node name="Settings" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "设置"
+
+[node name="production" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "制作人员"
+
+[connection signal="pressed" from="BoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="BoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="BoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="BoxContainer/production" to="." method="_on_production_pressed"]
