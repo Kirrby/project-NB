@@ -8,6 +8,7 @@ anchors_preset = 0
 script = ExtResource("1_ya1i7")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
 offset_top = 423.0
 offset_right = 256.0
 offset_bottom = 576.0
