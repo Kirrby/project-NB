@@ -1,21 +1,11 @@
 ~ test
 日富美 : 老师，这个备注叫女儿的人是谁
-do next_image()
 sensei : 那是爱丽丝...
-do next_image()
 日富美 : 不管了,如果老爸被绑了女儿肯定要筹钱的吧
-do next_image()
 日富美 : 是千年的爱丽丝同学吗
-do next_image()
 爱丽丝 : woc,盒😫
-do next_image()
 日富美 : 那个,我...
-do next_image()
 爱丽丝 : 爱丽丝错了,爱丽丝不该在网上口嗨的
-do next_image()
 日富美 : 你爹现在在我手里
-do next_image()
 爱丽丝 : 是是是,我爹和我妈都在你手里,只要别盒我,我全家人都在你手里
-do next_image()
 日富美 : 啊哈哈😅
-do end()

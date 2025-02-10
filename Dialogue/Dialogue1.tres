@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="DialogueGroup" load_steps=13 format=3 uid="uid://duixdgpeqt4x3"]
+
+[ext_resource type="Script" uid="uid://becooxbkdahxh" path="res://scripts/dialogue.gd" id="1_i22ad"]
+[ext_resource type="Script" uid="uid://duri2vuaxjfu2" path="res://scripts/dialogue_group.gd" id="2_sr5tw"]
+
+[sub_resource type="Resource" id="Resource_i22ad"]
+script = ExtResource("1_i22ad")
+character_name = "日富美"
+content = "老师，这个备注叫女儿的人是谁"
+metadata/_custom_type_script = ExtResource("1_i22ad")
+
+[sub_resource type="Resource" id="Resource_sr5tw"]
+script = ExtResource("1_i22ad")
+character_name = "sensei"
+content = "那是爱丽丝..."
+metadata/_custom_type_script = ExtResource("1_i22ad")
+
+[sub_resource type="Resource" id="Resource_njm6d"]
+script = ExtResource("1_i22ad")
+character_name = "日富美"
+content = "不管了,如果老爸被绑了女儿肯定要筹钱的吧"
+metadata/_custom_type_script = ExtResource("1_i22ad")
+
+[sub_resource type="Resource" id="Resource_11aip"]
+script = ExtResource("1_i22ad")
+character_name = "日富美"
+content = "是千年的爱丽丝同学吗"
+metadata/_custom_type_script = ExtResource("1_i22ad")
+
+[sub_resource type="Resource" id="Resource_v4cmj"]
+script = ExtResource("1_i22ad")
+character_name = "爱丽丝"
+content = "woc,盒😫"
+metadata/_custom_type_script = ExtResource("1_i22ad")
+
+[sub_resource type="Resource" id="Resource_kuwix"]
+script = ExtResource("1_i22ad")
+character_name = "日富美"
+content = "那个,我..."
+metadata/_custom_type_script = ExtResource("1_i22ad")
+
+[sub_resource type="Resource" id="Resource_pw2x3"]
+script = ExtResource("1_i22ad")
+character_name = "爱丽丝"
+content = "爱丽丝错了,爱丽丝不该在网上口嗨的"
+metadata/_custom_type_script = ExtResource("1_i22ad")
+
+[sub_resource type="Resource" id="Resource_skw1j"]
+script = ExtResource("1_i22ad")
+character_name = "日富美"
+content = "你爹现在在我手里"
+metadata/_custom_type_script = ExtResource("1_i22ad")
+
+[sub_resource type="Resource" id="Resource_4ny4v"]
+script = ExtResource("1_i22ad")
+character_name = "爱丽丝"
+content = "是是是,我爹和我妈都在你手里,只要别盒我,我全家人都在你手里"
+metadata/_custom_type_script = ExtResource("1_i22ad")
+
+[sub_resource type="Resource" id="Resource_k3how"]
+script = ExtResource("1_i22ad")
+character_name = "日富美"
+content = "啊哈哈😅"
+metadata/_custom_type_script = ExtResource("1_i22ad")
+
+[resource]
+script = ExtResource("2_sr5tw")
+dialogue_list = Array[ExtResource("1_i22ad")]([SubResource("Resource_i22ad"), SubResource("Resource_sr5tw"), SubResource("Resource_njm6d"), SubResource("Resource_11aip"), SubResource("Resource_v4cmj"), SubResource("Resource_kuwix"), SubResource("Resource_pw2x3"), SubResource("Resource_skw1j"), SubResource("Resource_4ny4v"), SubResource("Resource_k3how")])
+metadata/_custom_type_script = ExtResource("2_sr5tw")

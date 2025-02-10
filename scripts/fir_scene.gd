@@ -5,6 +5,7 @@ var image_folder = "res://photo/"
 
 var game_scene_instance = null
 @onready var settings: Control = $CanvasLayer/Settings
+@onready var dialog: Control = $Dialog
 
 
 
@@ -43,6 +44,7 @@ func end_scene():
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		next_image()
+		dialog.display_next_dialogue()
 
 	if event.is_action_pressed("ui_cancel"):
 		settings.show_settings()

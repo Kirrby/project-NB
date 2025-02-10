@@ -1,18 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw2noukbqm6bu"]
+[gd_scene load_steps=5 format=3 uid="uid://cw2noukbqm6bu"]
 
 [ext_resource type="Script" uid="uid://cayxbwfvgps" path="res://scripts/fir_scene.gd" id="1_kimwy"]
 [ext_resource type="Texture2D" uid="uid://d0c04w74q8xpr" path="res://photo/1.png" id="2_5ti82"]
 [ext_resource type="PackedScene" uid="uid://db80dnog32f8n" path="res://scenes/settings.tscn" id="3_6md54"]
+[ext_resource type="PackedScene" uid="uid://dwwm8cu1udi3m" path="res://scenes/dialog.tscn" id="4_qy5w4"]
 
 [node name="Fir_scene" type="Node2D"]
 script = ExtResource("1_kimwy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(580.444, 326)
-scale = Vector2(0.596296, 0.596296)
+position = Vector2(576.444, 326)
+scale = Vector2(0.600463, 0.596296)
 texture = ExtResource("2_5ti82")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Settings" parent="CanvasLayer" instance=ExtResource("3_6md54")]
 visible = false
+
+[node name="Dialog" parent="." instance=ExtResource("4_qy5w4")]
