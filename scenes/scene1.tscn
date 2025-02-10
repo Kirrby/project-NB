@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnn8sigufwkjv"]
+
+[ext_resource type="Script" uid="uid://dy3t3uxry36t4" path="res://scenes/scene1.gd" id="1_dc6gq"]
+[ext_resource type="Script" uid="uid://c8fb524mkpsvk" path="res://scripts/character_body_2d.gd" id="2_cg05x"]
+[ext_resource type="Texture2D" uid="uid://b4opeaxjd7ofe" path="res://resources/kitchen.jpg" id="2_ogaks"]
+[ext_resource type="Texture2D" uid="uid://cmainsbev6rl1" path="res://icon.svg" id="3_ogaks"]
+[ext_resource type="PackedScene" uid="uid://db80dnog32f8n" path="res://scenes/settings.tscn" id="4_s8jmr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8uh7m"]
+distance = -576.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6uqi0"]
+size = Vector2(128, 360)
+
+[node name="scene1" type="Node2D"]
+script = ExtResource("1_dc6gq")
+
+[node name="Kitchen" type="Sprite2D" parent="."]
+position = Vector2(1232.15, 324)
+scale = Vector2(1.73055, 1.71883)
+texture = ExtResource("2_ogaks")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_8uh7m")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(360, 176)
+script = ExtResource("2_cg05x")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(0, 116)
+scale = Vector2(1, 2.8125)
+texture = ExtResource("3_ogaks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 116)
+shape = SubResource("RectangleShape2D_6uqi0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Settings" parent="CanvasLayer" instance=ExtResource("4_s8jmr")]
+visible = false

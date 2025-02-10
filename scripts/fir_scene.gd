@@ -34,6 +34,7 @@ func next_image():
 	current_image_index += 1
 	if current_image_index > max_images:
 		end()
+		return
 	load_image(current_image_index)
 
 func end_scene():
@@ -52,4 +53,4 @@ func _input(event: InputEvent) -> void:
 
 
 func end():
-	get_tree().change_scene_to_file("res://scenes/Fir_CP.tscn")
+	get_tree().change_scene_to_file("res://scenes/scene1.tscn")
