@@ -415,7 +415,10 @@ func create_resource_from_text(text: String) -> Resource:
 ## Show the example balloon
 func show_example_dialogue_balloon(resource: DialogueResource, title: String = "", extra_game_states: Array = []) -> CanvasLayer:
 	var balloon: Node = load(_get_example_balloon_path()).instantiate()
-	_start_balloon.call_deferred(balloon, resource, title, extra_game_states)
+	get_current_scene.call().add_child(balloon)
+	balloon.start(resource, title, extra_game_states)
+	dialogue_started.emit(resource)
+
 	return balloon
 
 
@@ -435,14 +438,7 @@ func show_dialogue_balloon_scene(balloon_scene, resource: DialogueResource, titl
 		balloon_scene = balloon_scene.instantiate()
 
 	var balloon: Node = balloon_scene
-	_start_balloon.call_deferred(balloon, resource, title, extra_game_states)
-	return balloon
-
-
-# Call "start" on the given balloon.
-func _start_balloon(balloon: Node, resource: DialogueResource, title: String, extra_game_states: Array) -> void:
-	get_current_scene.call().add_child(balloon)
-
+	get_current_scene.call().add_child.call_deferred(balloon)
 	if balloon.has_method(&"start"):
 		balloon.start(resource, title, extra_game_states)
 	elif balloon.has_method(&"Start"):
@@ -451,6 +447,7 @@ func _start_balloon(balloon: Node, resource: DialogueResource, title: String, ex
 		assert(false, DMConstants.translate(&"runtime.dialogue_balloon_missing_start_method"))
 
 	dialogue_started.emit(resource)
+	return balloon
 
 
 # Get the path to the example balloon
@@ -683,7 +680,7 @@ func _mutate(mutation: Dictionary, extra_game_states: Array, is_inline_mutation:
 		var args: Array = await _resolve_each(expression[0].value, extra_game_states)
 		match expression[0].function:
 			&"wait", &"Wait":
-				mutated.emit(mutation.merged({ is_inline = is_inline_mutation }))
+				mutated.emit(mutation)
 				await Engine.get_main_loop().create_timer(float(args[0])).timeout
 				return
 
@@ -694,7 +691,7 @@ func _mutate(mutation: Dictionary, extra_game_states: Array, is_inline_mutation:
 	# Or pass through to the resolver
 	else:
 		if not _mutation_contains_assignment(mutation.expression) and not is_inline_mutation:
-			mutated.emit(mutation.merged({ is_inline = is_inline_mutation }))
+			mutated.emit(mutation)
 
 		if mutation.get("is_blocking", true):
 			await _resolve(mutation.expression.duplicate(true), extra_game_states)

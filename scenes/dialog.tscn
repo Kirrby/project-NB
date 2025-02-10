@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwwm8cu1udi3m"]
+
+[ext_resource type="Shader" uid="uid://b03t0eiyxjfyw" path="res://resources/settings.gdshader" id="1_5wlj5"]
+[ext_resource type="Script" uid="uid://cnsqhm4ua721q" path="res://scripts/dialog.gd" id="1_w7j6r"]
+[ext_resource type="Texture2D" uid="uid://cmainsbev6rl1" path="res://icon.svg" id="2_w7j6r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4uc3s"]
+shader = ExtResource("1_5wlj5")
+shader_parameter/lod = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_rxi5t"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_37fld"]
+font_size = 32
+
+[node name="Dialog" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w7j6r")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 448.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.882353)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_4uc3s")
+layout_mode = 0
+offset_top = 448.0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_w7j6r")
+
+[node name="UserName" type="Label" parent="."]
+layout_mode = 0
+offset_top = 448.0
+offset_right = 192.0
+offset_bottom = 512.0
+text = "sensei"
+label_settings = SubResource("LabelSettings_rxi5t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 512.0
+offset_right = 1152.0
+offset_bottom = 648.0
+text = "试试水"
+label_settings = SubResource("LabelSettings_37fld")
