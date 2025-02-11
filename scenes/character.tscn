@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6vufr10chagn"]
+
+[ext_resource type="Script" uid="uid://c8fb524mkpsvk" path="res://scripts/character_body_2d.gd" id="1_pjt0s"]
+[ext_resource type="Texture2D" uid="uid://cmainsbev6rl1" path="res://icon.svg" id="2_wa5vi"]
+[ext_resource type="Texture2D" uid="uid://bsakgrkxvp3e" path="res://resources/magnifiers.jpg" id="3_lrhn5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6uqi0"]
+size = Vector2(128, 360)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkhd4"]
+radius = 64.0
+height = 368.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_pjt0s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 116)
+limit_smoothed = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 116)
+scale = Vector2(1, 2.8125)
+texture = ExtResource("2_wa5vi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 116)
+shape = SubResource("RectangleShape2D_6uqi0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 104)
+shape = SubResource("CapsuleShape2D_rkhd4")
+
+[node name="Magnifiers" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -128)
+scale = Vector2(0.274194, 0.274194)
+texture = ExtResource("3_lrhn5")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_exited"]
