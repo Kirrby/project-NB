@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnn8sigufwkjv"]
+[gd_scene load_steps=9 format=3 uid="uid://bnn8sigufwkjv"]
 
 [ext_resource type="Script" uid="uid://dy3t3uxry36t4" path="res://scripts/scene1.gd" id="1_dc6gq"]
 [ext_resource type="Texture2D" uid="uid://b4opeaxjd7ofe" path="res://resources/kitchen.jpg" id="2_ogaks"]
+[ext_resource type="AudioStream" uid="uid://e17ri442slkb" path="res://resources/bgm/backgrand.mp3" id="2_s8jmr"]
 [ext_resource type="PackedScene" uid="uid://c6vufr10chagn" path="res://scenes/character.tscn" id="3_dc6gq"]
 [ext_resource type="PackedScene" uid="uid://db80dnog32f8n" path="res://scenes/settings.tscn" id="4_s8jmr"]
 [ext_resource type="Script" uid="uid://cj6kxfhofkcj6" path="res://scripts/door_area.gd" id="5_cg05x"]
@@ -15,6 +16,7 @@ height = 384.0
 
 [node name="scene1" type="Node2D"]
 script = ExtResource("1_dc6gq")
+bgm = ExtResource("2_s8jmr")
 
 [node name="Kitchen" type="Sprite2D" parent="."]
 position = Vector2(1232, 324)

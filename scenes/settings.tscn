@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://db80dnog32f8n"]
+[gd_scene load_steps=7 format=3 uid="uid://db80dnog32f8n"]
 
 [ext_resource type="Script" uid="uid://ch2gn72lfx07b" path="res://scripts/settings.gd" id="1_x2hje"]
 [ext_resource type="Shader" uid="uid://b03t0eiyxjfyw" path="res://resources/settings.gdshader" id="2_3ykye"]
+[ext_resource type="Resource" uid="uid://wi08enxlohnq" path="res://Dialogue/config.tres" id="2_f4mfi"]
 [ext_resource type="Texture2D" uid="uid://cmainsbev6rl1" path="res://icon.svg" id="3_gc0em"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cj1lu"]
@@ -16,6 +17,7 @@ process_mode = 2
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_x2hje")
+config = ExtResource("2_f4mfi")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_cj1lu")
@@ -46,32 +48,30 @@ horizontal_alignment = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="Music_volume" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "音乐音量"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer"]
-layout_direction = 3
+[node name="Music_v" type="HSlider" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
-min_value = -30.0
-max_value = 0.0
+max_value = 1.0
+step = 0.1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+[node name="Sound_volume" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "音效音量"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
+[node name="Sound_v" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -79,14 +79,14 @@ size_flags_vertical = 4
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3"]
+[node name="Win_mode" type="Label" parent="VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "全屏（F4）"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CheckButton" type="CheckButton" parent="VBoxContainer/HBoxContainer3"]
+[node name="Win_mod" type="CheckButton" parent="VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 6
 
@@ -104,4 +104,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "取消（ESC）"
 
+[connection signal="pressed" from="VBoxContainer/HBoxContainer4/Confirm" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer4/Cancel" to="." method="_on_cancel_pressed"]

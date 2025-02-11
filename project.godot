@@ -17,16 +17,13 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Autoload="*res://scripts/autoload.gd"
+SoundManager="*res://scenes/sound_manager.tscn"
 
 [display]
 
 window/stretch/mode="canvas_items"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+window/per_pixel_transparency/allowed=true
 
 [gui]
 

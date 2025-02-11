@@ -30,7 +30,7 @@ metadata/_custom_type_script = ExtResource("1_i22ad")
 [sub_resource type="Resource" id="Resource_v4cmj"]
 script = ExtResource("1_i22ad")
 character_name = "爱丽丝"
-content = "woc,盒😫"
+content = "woc,盒"
 metadata/_custom_type_script = ExtResource("1_i22ad")
 
 [sub_resource type="Resource" id="Resource_kuwix"]
@@ -60,7 +60,7 @@ metadata/_custom_type_script = ExtResource("1_i22ad")
 [sub_resource type="Resource" id="Resource_k3how"]
 script = ExtResource("1_i22ad")
 character_name = "日富美"
-content = "啊哈哈😅"
+content = "啊哈哈"
 metadata/_custom_type_script = ExtResource("1_i22ad")
 
 [resource]

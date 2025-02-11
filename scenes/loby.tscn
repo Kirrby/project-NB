@@ -38,6 +38,10 @@ text = "设置"
 layout_mode = 2
 text = "制作人员"
 
+[node name="Quit" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "退出游戏"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Settings" parent="CanvasLayer" instance=ExtResource("3_071si")]
@@ -47,3 +51,4 @@ visible = false
 [connection signal="pressed" from="BoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="BoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="BoxContainer/production" to="." method="_on_production_pressed"]
+[connection signal="pressed" from="BoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv3crc0sg4kp5"]
+
+[ext_resource type="Script" uid="uid://csr1jnsp0b4vn" path="res://scripts/sound_manager.gd" id="1_s6peo"]
+[ext_resource type="AudioStream" uid="uid://e17ri442slkb" path="res://resources/bgm/backgrand.mp3" id="2_shlr6"]
+
+[node name="SoundManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_s6peo")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_shlr6")
+bus = &"BGM"
