@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwwm8cu1udi3m"]
+[gd_scene load_steps=7 format=3 uid="uid://dwwm8cu1udi3m"]
 
 [ext_resource type="Shader" uid="uid://b03t0eiyxjfyw" path="res://resources/settings.gdshader" id="1_5wlj5"]
 [ext_resource type="Script" uid="uid://cnsqhm4ua721q" path="res://scripts/dialog.gd" id="1_w7j6r"]
-[ext_resource type="Resource" uid="uid://duixdgpeqt4x3" path="res://Dialogue/Dialogue1.tres" id="2_auqi6"]
-[ext_resource type="Texture2D" uid="uid://cmainsbev6rl1" path="res://icon.svg" id="2_w7j6r"]
+[ext_resource type="Texture2D" uid="uid://dlvr4yvj6w87d" path="res://icon.svg" id="2_w7j6r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4uc3s"]
 shader = ExtResource("1_5wlj5")
@@ -25,7 +24,6 @@ grow_vertical = 2
 script = ExtResource("1_w7j6r")
 character_name_text = NodePath("UserName")
 text_box = NodePath("Text")
-main_dialogue = ExtResource("2_auqi6")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -61,3 +59,9 @@ offset_bottom = 648.0
 text = "试试水"
 label_settings = SubResource("LabelSettings_37fld")
 autowrap_mode = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.25
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

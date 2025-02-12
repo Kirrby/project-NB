@@ -1,7 +1,5 @@
 extends Node
 
-enum Bus { MASTER, SFX, BGM }
-
 @onready var bgm_player: AudioStreamPlayer = $BGMPlayer
 
 func play_bgm(stream: AudioStream) -> void:

@@ -43,10 +43,9 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_released("sprint"):
 		is_sprint_pressed = false
 
-	if event.is_action_pressed("ui_accept") and is_interact:
+	if event.is_action_pressed("Interactive") and is_interact:
 		interacter.interactive_event()
-		
-		
+
 
 func _on_area_entered(area: Area2D) -> void:
 	$Magnifiers.show()
@@ -55,7 +54,7 @@ func _on_area_entered(area: Area2D) -> void:
 	pass # Replace with function body.
 
 
-func _on_area_exited(area: Area2D) -> void:
+func _on_area_exited(_area: Area2D) -> void:
 	$Magnifiers.hide()
 	is_interact = false
 	interacter = null

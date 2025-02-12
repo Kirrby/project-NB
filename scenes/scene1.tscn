@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnn8sigufwkjv"]
+[gd_scene load_steps=10 format=3 uid="uid://bnn8sigufwkjv"]
 
 [ext_resource type="Script" uid="uid://dy3t3uxry36t4" path="res://scripts/scene1.gd" id="1_dc6gq"]
 [ext_resource type="Texture2D" uid="uid://b4opeaxjd7ofe" path="res://resources/kitchen.jpg" id="2_ogaks"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c6vufr10chagn" path="res://scenes/character.tscn" id="3_dc6gq"]
 [ext_resource type="PackedScene" uid="uid://db80dnog32f8n" path="res://scenes/settings.tscn" id="4_s8jmr"]
 [ext_resource type="Script" uid="uid://cj6kxfhofkcj6" path="res://scripts/door_area.gd" id="5_cg05x"]
+[ext_resource type="PackedScene" uid="uid://dwwm8cu1udi3m" path="res://scenes/dialog.tscn" id="6_s8jmr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8uh7m"]
 distance = -576.0
@@ -31,9 +32,15 @@ shape = SubResource("WorldBoundaryShape2D_8uh7m")
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_dc6gq")]
 position = Vector2(472, 280)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="SettingLayer" type="CanvasLayer" parent="."]
+layer = 100
 
-[node name="Settings" parent="CanvasLayer" instance=ExtResource("4_s8jmr")]
+[node name="Settings" parent="SettingLayer" instance=ExtResource("4_s8jmr")]
+visible = false
+
+[node name="DialogLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialog" parent="DialogLayer" instance=ExtResource("6_s8jmr")]
 visible = false
 
 [node name="Area2D" type="Area2D" parent="."]
