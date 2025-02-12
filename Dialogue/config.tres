@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="Config" load_steps=2 format=3 uid="uid://wi08enxlohnq"]
+[gd_resource type="Resource" script_class="Config" load_steps=2 format=3 uid="uid://cxa653jnvtyfd"]
 
 [ext_resource type="Script" uid="uid://dw5plmpfmowc1" path="res://scripts/config.gd" id="1_jvelp"]
 
 [resource]
 script = ExtResource("1_jvelp")
 music_volume = 1.0
-sound_volume = 0.0
+sound_volume = 1.0
 window_mode = 0
 metadata/_custom_type_script = ExtResource("1_jvelp")

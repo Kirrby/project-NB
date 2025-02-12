@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ch2gn72lfx07b" path="res://scripts/settings.gd" id="1_x2hje"]
 [ext_resource type="Shader" uid="uid://b03t0eiyxjfyw" path="res://resources/settings.gdshader" id="2_3ykye"]
-[ext_resource type="Resource" uid="uid://wi08enxlohnq" path="res://Dialogue/config.tres" id="2_f4mfi"]
+[ext_resource type="Resource" uid="uid://cxa653jnvtyfd" path="res://Dialogue/config.tres" id="2_f4mfi"]
 [ext_resource type="Texture2D" uid="uid://cmainsbev6rl1" path="res://icon.svg" id="3_gc0em"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cj1lu"]
@@ -86,9 +86,16 @@ text = "全屏（F4）"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Win_mod" type="CheckButton" parent="VBoxContainer/HBoxContainer3"]
+[node name="win_opt" type="OptionButton" parent="VBoxContainer/HBoxContainer3"]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 3
+item_count = 3
+popup/item_0/text = "窗口"
+popup/item_0/id = 0
+popup/item_1/text = "全屏"
+popup/item_1/id = 3
+popup/item_2/text = "窗口化全屏"
+popup/item_2/id = 4
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
