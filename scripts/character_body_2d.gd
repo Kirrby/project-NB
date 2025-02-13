@@ -10,6 +10,7 @@ var interacter
 @onready var scene = $".."
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var area_2d: Area2D = $Area2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
 func _ready() -> void:
@@ -30,8 +31,11 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		animated_sprite_2d.flip_h = direction > 0
+		animated_sprite_2d.play("walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		animated_sprite_2d.stop()
 
 	move_and_slide()
 

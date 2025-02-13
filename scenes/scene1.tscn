@@ -30,7 +30,7 @@ texture = ExtResource("2_ogaks")
 shape = SubResource("WorldBoundaryShape2D_8uh7m")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_dc6gq")]
-position = Vector2(472, 280)
+position = Vector2(280, 272)
 
 [node name="SettingLayer" type="CanvasLayer" parent="."]
 layer = 100
