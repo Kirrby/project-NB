@@ -7,7 +7,7 @@ class_name 地图场景
 var limit_top = 0
 var limit_bottom = 648
 var limit_left = 0
-var limit_right = 2464
+var limit_right = 3232
 
 
 func _ready() -> void:

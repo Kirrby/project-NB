@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dy3t3uxry36t4" path="res://scripts/scene1.gd" id="1_dc6gq"]
 [ext_resource type="AudioStream" uid="uid://e17ri442slkb" path="res://resources/bgm/backgrand.mp3" id="2_s8jmr"]
 [ext_resource type="PackedScene" uid="uid://c6vufr10chagn" path="res://scenes/character.tscn" id="3_dc6gq"]
-[ext_resource type="Texture2D" uid="uid://cf5io4edpjvqn" path="res://resources/map.png" id="3_s8jmr"]
+[ext_resource type="Texture2D" uid="uid://cb0hsficr2da" path="res://resources/full-resolution-pixelated.png" id="3_s8jmr"]
 [ext_resource type="PackedScene" uid="uid://db80dnog32f8n" path="res://scenes/settings.tscn" id="4_s8jmr"]
 [ext_resource type="Script" uid="uid://cj6kxfhofkcj6" path="res://scripts/door_area.gd" id="5_cg05x"]
 [ext_resource type="PackedScene" uid="uid://dwwm8cu1udi3m" path="res://scenes/dialog.tscn" id="6_s8jmr"]
@@ -12,16 +12,16 @@
 distance = -592.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dc6gq"]
-radius = 72.0
-height = 336.0
+radius = 88.0
+height = 416.0
 
 [node name="scene1" type="Node2D"]
 script = ExtResource("1_dc6gq")
 bgm = ExtResource("2_s8jmr")
 
 [node name="Kitchen" type="Sprite2D" parent="."]
-position = Vector2(1280, 324)
-scale = Vector2(2.07792, 2)
+position = Vector2(1616, 324)
+scale = Vector2(0.936812, 0.9)
 texture = ExtResource("3_s8jmr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -47,5 +47,5 @@ visible = false
 script = ExtResource("5_cg05x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1528, 392)
+position = Vector2(1928, 344)
 shape = SubResource("CapsuleShape2D_dc6gq")
